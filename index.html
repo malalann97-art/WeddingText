@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>请柬文案生成器 · 唯美散文短句</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <h1>请柬文案生成器</h1>
+            <p class="subtitle">唯美 · 散文风 · 短句</p>
+        </header>
+
+        <section class="controls">
+            <div class="field-grid">
+                <label class="field">
+                    <span>新郎姓名</span>
+                    <input id="groom" type="text" placeholder="例如：陈宇"/>
+                </label>
+                <label class="field">
+                    <span>新娘姓名</span>
+                    <input id="bride" type="text" placeholder="例如：林安"/>
+                </label>
+                <label class="field">
+                    <span>日期</span>
+                    <input id="date" type="text" placeholder="例如：2025年10月1日"/>
+                </label>
+                <label class="field">
+                    <span>地点</span>
+                    <input id="venue" type="text" placeholder="例如：杭州 · 西子湖畔"/>
+                </label>
+            </div>
+
+            <div class="field-grid">
+                <label class="field">
+                    <span>主题/意象（可多选，用逗号分隔）</span>
+                    <input id="motifs" type="text" placeholder="秋光、流水、星辉、山风"/>
+                </label>
+                <label class="field">
+                    <span>语气浓度</span>
+                    <select id="intensity">
+                        <option value="soft">清浅</option>
+                        <option value="medium" selected>适中</option>
+                        <option value="rich">浓郁</option>
+                    </select>
+                </label>
+                <label class="field">
+                    <span>句数</span>
+                    <input id="lines" type="number" min="4" max="16" value="8"/>
+                </label>
+                <label class="field">
+                    <span>随机种子（可选）</span>
+                    <input id="seed" type="number" placeholder="留空则每次不同"/>
+                </label>
+            </div>
+
+            <div class="field-grid ai-grid">
+                <label class="field">
+                    <span>AI 生成</span>
+                    <select id="aiMode">
+                        <option value="off" selected>关闭（本地随机生成）</option>
+                        <option value="deepseek">DeepSeek</option>
+                    </select>
+                </label>
+                <label class="field">
+                    <span>模型</span>
+                    <select id="aiModel">
+                        <option value="deepseek-chat" selected>deepseek-chat</option>
+                        <option value="deepseek-reasoner">deepseek-reasoner</option>
+                    </select>
+                </label>
+                <label class="field">
+                    <span>温度</span>
+                    <input id="aiTemperature" type="number" min="0" max="2" step="0.1" value="0.7"/>
+                </label>
+                <label class="field">
+                    <span>API Key（仅本地使用）</span>
+                    <input id="aiKey" type="password" placeholder="sk-..."/>
+                </label>
+            </div>
+
+            <div class="actions">
+                <button id="generate" class="btn primary">生成文案</button>
+                <button id="shuffle" class="btn">换一版</button>
+                <button id="aiGenerate" class="btn">AI 生成</button>
+                <button id="copy" class="btn">复制</button>
+                <button id="download" class="btn">下载为TXT</button>
+            </div>
+        </section>
+
+        <section class="output">
+            <div id="result" class="card" contenteditable="true" spellcheck="false"></div>
+            <p class="hint">提示：可直接编辑上方文字进行微调</p>
+        </section>
+
+        <footer class="footer">
+            <span>© 2025 请柬文案生成器</span>
+        </footer>
+    </div>
+
+    <script src="config.js" defer></script>
+    <script src="script.js"></script>
+    <noscript>需要启用 JavaScript 才能使用该工具。</noscript>
+</body>
+</html>
+
+

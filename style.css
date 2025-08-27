@@ -1,0 +1,99 @@
+:root {
+  --bg: #faf7f5;
+  --card: #ffffff;
+  --text: #302924;
+  --muted: #7a6e66;
+  --accent: #b9806f;
+  --accent-strong: #a16553;
+  --border: #e9e0db;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Sans SC', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+.app { max-width: 920px; margin: 0 auto; padding: 24px 16px 56px; }
+
+.header { text-align: center; margin-bottom: 18px; }
+.header h1 {
+  margin: 8px 0 4px;
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.subtitle { color: var(--muted); margin: 0; }
+
+.controls {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.ai-grid { margin-top: 6px; }
+
+@media (max-width: 920px) {
+  .field-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 520px) {
+  .field-grid { grid-template-columns: 1fr; }
+}
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field span { color: var(--muted); font-size: 14px; }
+.field input, .field select {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--text);
+  outline: none;
+}
+.field input:focus, .field select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(185,128,111,0.12); }
+
+.actions { display: flex; gap: 10px; margin-top: 6px; flex-wrap: wrap; }
+.btn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #fff;
+  cursor: pointer;
+  transition: transform .03s ease, background .2s ease, border .2s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn.primary { background: var(--accent); border-color: var(--accent-strong); color: #fff; }
+
+.output { margin-top: 18px; }
+.card {
+  min-height: 220px;
+  padding: 18px 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 6px 20px rgba(0,0,0,0.04);
+  font-family: 'Noto Serif SC', serif;
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+  white-space: pre-wrap;
+}
+
+.hint { color: var(--muted); font-size: 13px; margin: 8px 4px; }
+
+.footer { color: var(--muted); text-align: center; margin-top: 20px; font-size: 12px; }
+
+
