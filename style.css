@@ -1,11 +1,11 @@
 :root {
-  --bg: #faf7f5;
+  --bg: #fee2e0;
   --card: #ffffff;
   --text: #302924;
   --muted: #7a6e66;
-  --accent: #b9806f;
-  --accent-strong: #a16553;
-  --border: #e9e0db;
+  --accent: #f55d99;
+  --accent-strong: #e12074;
+  --border: #ffc4e5;
 }
 
 * { box-sizing: border-box; }
@@ -93,5 +93,6 @@ body {
 .hint { color: var(--muted); font-size: 13px; margin: 8px 4px; }
 
 .footer { color: var(--muted); text-align: center; margin-top: 20px; font-size: 12px; }
+
 
 
